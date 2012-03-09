@@ -1,4 +1,4 @@
-function Punto(x,y){
+function Point(x,y){
     this.x = x;
     this.y = y;
     this.getX = function (){
@@ -15,7 +15,7 @@ function Punto(x,y){
     }
 }
 
-function Triangolo(p1,p2,p3){
+function Triangle(p1,p2,p3){
 	this.getPerimeter = function (){
 		return (p1.getDistance(p2) + p2.getDistance(p3) + p3.getDistance(p1));
 	}
