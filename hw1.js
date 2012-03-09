@@ -9,9 +9,16 @@ var sqrt = Math.sqrt;
 var pow = Math.pow;
 
 Point.prototype.getDistance = function(point) {
+  
   return sqrt(pow(point.y - this.y, 2) + pow(point.x - this.y, 2));
 };
 
+Point.prototype.traslate = function(dx,dy) {
+  this.x+=dx;
+	this.y+=dy;
+
+  return this;
+};
 
 /* TRIANGLE */
 
