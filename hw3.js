@@ -1,24 +1,27 @@
-/* Homework 1 */
+/* Point.translate */
+
+var sqrt = Math.sqrt;
+var pow = Math.pow;
+
+/* POINT */
 
 var Point = function (x, y) {
   this.x = x || 0;
   this.y = y || 0;
 }
 
-var sqrt = Math.sqrt;
-var pow = Math.pow;
-
 Point.prototype.getDistance = function(point) {
-  
   return sqrt(pow(point.y - this.y, 2) + pow(point.x - this.y, 2));
 };
 
-Point.prototype.traslate = function(dx,dy) {
-  this.x+=dx;
-	this.y+=dy;
+Point.prototype.translate = function(dx, dy) {
+  this.x += dx;
+  this.y += dy;
 
   return this;
 };
+
+
 
 /* TRIANGLE */
 
@@ -51,9 +54,4 @@ var p1 = new Point(x1, y1);
 var p2 = new Point(x2, y2);
 var p3 = new Point(x3, y3);
 
-var d = p1.getDistance(p2);
-
-var t = new Triangle(p1,p2,p3);
-
-var perimetro = t.getPerimeter();
-var area = t.getArea();
+p1.translate(1,2).translate(-1,-2);

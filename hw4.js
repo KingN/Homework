@@ -1,24 +1,27 @@
-/* Homework 1 */
+/* randomPoint [-100,100]*/
+
+var sqrt = Math.sqrt;
+var pow = Math.pow;
+var random = Math.random;
+
+/* POINT */
 
 var Point = function (x, y) {
   this.x = x || 0;
   this.y = y || 0;
 }
 
-var sqrt = Math.sqrt;
-var pow = Math.pow;
-
 Point.prototype.getDistance = function(point) {
-  
   return sqrt(pow(point.y - this.y, 2) + pow(point.x - this.y, 2));
 };
 
-Point.prototype.traslate = function(dx,dy) {
-  this.x+=dx;
-	this.y+=dy;
+Point.prototype.translate = function(dx, dy) {
+  this.x += dx;
+  this.y += dy;
 
   return this;
 };
+
 
 /* TRIANGLE */
 
@@ -43,17 +46,13 @@ Triangle.prototype.getArea = function() {
 };
 
 
-var x1 = 0, y1 = 0;
-var x2 = 10, y2 = 0;
-var x3 = 0, y3 = 10;
+var randomPoint = function () {
+  var x1 = random() * 200 - 100;
+  var y1 = random() * 200 - 100;
+  
+  return new Point(x1, y1);
+};
 
-var p1 = new Point(x1, y1);
-var p2 = new Point(x2, y2);
-var p3 = new Point(x3, y3);
-
-var d = p1.getDistance(p2);
-
-var t = new Triangle(p1,p2,p3);
-
-var perimetro = t.getPerimeter();
-var area = t.getArea();
+var p1 = randomPoint();
+var p2 = randomPoint();
+var p3 = randomPoint();
