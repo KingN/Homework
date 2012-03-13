@@ -69,7 +69,7 @@ var points = randomPoints(100);
 var filterBisettrice = function (array){
   return array
     .filter(function(item){
-      return item.x > item.y;
+      return (item.y - item.x) > 0;
     });
 
 }
