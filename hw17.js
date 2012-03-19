@@ -34,3 +34,34 @@ var comp = function (functions){
 		};
 	});
 };
+
+/* fun cons applica ogni funzione ad un valore e restituisce l'array delle funzioni applicate all'elemento*/
+var cons = function (functions){
+	return function(x){
+		return functions.map(function (f){
+			return f(x);
+		});
+	};	
+};
+
+/* fun distl che distribuisce un elemento passato nell'array il tutto è passato in un unico array */
+ var distl = function(array2){
+ 	var value = array2[0];
+ 	var array = array2[1];
+ 	return array.map(function (item){
+ 		return [value,item];
+ 	});
+ };
+
+/*fun trans che traspone una matrice*/
+
+var trans = function(matrix){
+	var result = [];
+    matrix.forEach(function (row, i) {
+      row.forEach(function (value, j) {
+        (result[j] = result[j] || [])[i] = value;
+      });
+    });
+    return result;
+  };
+}
